@@ -44,6 +44,13 @@ const SignInForm = () => {
       alert(error.message);
     }
   };
+
+  const handleGoogleSignIn = async () => {
+    await authClient.signIn.social({
+      provider: "google",
+    });
+  };
+
   return (
     <Card className="border mx-auto w-125 py-10 mt-5">
       <h1 className="text-center text-2xl font-bold">Sign In</h1>
@@ -105,7 +112,11 @@ const SignInForm = () => {
       <div className="mt-3 flex flex-col items-center">
         <span className="mb-3 text-lg">Or</span>
 
-        <Button variant="outline" className="w-full flex gap-3 items-center">
+        <Button
+          onClick={handleGoogleSignIn}
+          variant="outline"
+          className="w-full flex gap-3 items-center"
+        >
           <FaGoogle />
           <span>Sign In With Google</span>
         </Button>

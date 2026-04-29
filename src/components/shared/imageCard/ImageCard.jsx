@@ -1,4 +1,4 @@
-import { Button, Separator } from "@heroui/react";
+import { Button, Chip, Separator } from "@heroui/react";
 import Image from "next/image";
 import React from "react";
 import { FaHeart } from "react-icons/fa";
@@ -18,6 +18,8 @@ const ImageCard = ({ generation }) => {
           sizes="(max-width: 768px) 100vw, 33vw"
           className="object-cover rounded-lg"
         />
+
+        <Chip className="absolute right-4 top-4">{category}</Chip>
       </figure>
 
       <div className="flex flex-col gap-3">

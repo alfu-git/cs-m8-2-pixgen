@@ -1,12 +1,12 @@
 import { Button, Chip, Separator } from "@heroui/react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { FaHeart } from "react-icons/fa";
 import { LiaDownloadSolid } from "react-icons/lia";
 
 const ImageCard = ({ generation }) => {
-  console.log(generation);
-  const { imageUrl, category, title, likes, downloads } = generation;
+  const { id, imageUrl, category, title, likes, downloads } = generation;
 
   return (
     <div className="p-4 border border-zinc-400 rounded-lg shadow">
@@ -39,9 +39,11 @@ const ImageCard = ({ generation }) => {
           </span>
         </div>
 
-        <Button variant="outline" className="mt-2 w-full text-lg">
-          View
-        </Button>
+        <Link href={`/generation-details/${id}`}>
+          <Button variant="outline" className="mt-2 w-full text-lg">
+            View
+          </Button>
+        </Link>
       </div>
     </div>
   );
